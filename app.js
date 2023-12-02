@@ -4,17 +4,17 @@ var app = express();
 
 app.get("/", (req,res) => {
     res.status(200);
-    res.send("<h1>Hello Express World!</h1>")
+    res.sendFile(__dirname + "/html/first.html");
 });
 
 app.get("/first", (req,res) => {
     res.status(200);
-    res.send("<h1>First page</h1>");
+    res.sendFile(__dirname + "/html/first.html");
 });
 
 app.get("/second", (req,res) => {
     res.status(200);
-    res.send("<h1>Second page</h1>");
+    res.sendFile(__dirname + "/html/second.html");
 });
 
 app.get("*", (req,res) => {
