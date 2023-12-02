@@ -1,20 +1,24 @@
 const express = require('express');
 
 var app = express();
+app.set('view engine', 'ejs');
 
 app.get("/", (req,res) => {
+    const details = {name: 'Gerard', favorite: 'Chinese'};
     res.status(200);
-    res.sendFile(__dirname + "/html/first.html");
+    res.render('generic',details);
 });
 
 app.get("/first", (req,res) => {
+    const details = {name: 'Caoimhe', favorite: 'Pasta'};
     res.status(200);
-    res.sendFile(__dirname + "/html/first.html");
+    res.render('generic', details);
 });
 
 app.get("/second", (req,res) => {
+    const details = {name: 'james', favorite: 'mexican'};
     res.status(200);
-    res.sendFile(__dirname + "/html/second.html");
+    res.render('generic', details);
 });
 
 app.get("*", (req,res) => {
